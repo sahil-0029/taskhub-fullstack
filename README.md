@@ -1,9 +1,13 @@
-# 🚀 Team Task Manager (Full-Stack | Production Deployed)
+<<<<<<< HEAD
+# 🚀 # TaskHub - Team Collaboration Platform
 
 A scalable full-stack team collaboration platform designed to manage projects, assign tasks, and enforce role-based workflows in real time.
 
 🔗 **Live Demo:**
-👉 [https://team-task-manager-full-stack-production-3cc0.up.railway.app](https://team-task-manager-full-stack-production-3cc0.up.railway.app)
+👉 [taskhub-fullstack-production.up.railway.app]
+
+
+# Github Link [https://github.com/sahil-0029/taskhub-fullstack.git]
 
 ---
 
@@ -231,5 +235,8 @@ It reflects real-world use cases such as:
 
 ## 👨‍💻 Author
 
-**Shourya Mukhi**
-Computer Science Engineer | Full-Stack Developer
+**Sahil**
+Computer Science (Data Science) | 
+=======
+ # TaskHub - Team Collaboration Platform
+>>>>>>> 0bfaa0a9240ac3985b8a91eae7dcffb5b4e01227
