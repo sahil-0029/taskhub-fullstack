@@ -1,13 +1,14 @@
-<<<<<<< HEAD
+
 # 🚀 # TaskHub - Team Collaboration Platform
 
 A scalable full-stack team collaboration platform designed to manage projects, assign tasks, and enforce role-based workflows in real time.
 
-🔗 **Live Demo:**
-👉 [taskhub-fullstack-production.up.railway.app]
+🔗 [Live Demo](https://taskhub-fullstack-production.up.railway.app)
 
+## GitHub Repository
 
-# Github Link [https://github.com/sahil-0029/taskhub-fullstack.git]
+[GitHub Repo](https://github.com/sahil-0029/taskhub-fullstack)
+
 
 ---
 
@@ -239,4 +240,4 @@ It reflects real-world use cases such as:
 Computer Science (Data Science) | 
 =======
  # TaskHub - Team Collaboration Platform
->>>>>>> 0bfaa0a9240ac3985b8a91eae7dcffb5b4e01227
+
