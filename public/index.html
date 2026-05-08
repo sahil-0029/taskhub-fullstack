@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Team Task Manager</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html, body { background: #020617; }
+    [x-cloak] { display: none !important; }
+    /* Dark-styled native date picker icon */
+    input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7); cursor: pointer; }
+    /* Better scrollbars on dark */
+    ::-webkit-scrollbar { width: 10px; height: 10px; }
+    ::-webkit-scrollbar-track { background: #0f172a; }
+    ::-webkit-scrollbar-thumb { background: #334155; border-radius: 5px; }
+    ::-webkit-scrollbar-thumb:hover { background: #475569; }
+  </style>
+</head>
+<body class="bg-slate-950 min-h-screen text-slate-100">
+  <!-- AUTH SCREEN -->
+  <div id="auth-screen" class="hidden min-h-screen flex items-center justify-center p-4">
+    <div class="w-full max-w-md bg-slate-900 border border-slate-800 shadow-2xl rounded-2xl p-8">
+      <h1 class="text-2xl font-bold text-center mb-1 bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">Team Task Manager</h1>
+      <p class="text-center text-slate-400 mb-6 text-sm">Projects, tasks, and teams in one place.</p>
+      <div class="flex border-b border-slate-800 mb-4">
+        <button id="tab-login" class="flex-1 py-2 font-semibold border-b-2 border-violet-500 text-violet-400">Login</button>
+        <button id="tab-signup" class="flex-1 py-2 font-semibold border-b-2 border-transparent text-slate-500">Sign Up</button>
+      </div>
+      <form id="login-form" class="space-y-3">
+        <input name="email" type="email" placeholder="you@example.com" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9](?:[a-zA-Z0-9\-]*[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9\-]*[a-zA-Z0-9])?)*\.[a-zA-Z]{2,}" title="Enter a valid email like name@example.com" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-violet-500" />
+        <input name="password" type="password" placeholder="Password" required class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-violet-500" />
+        <button class="w-full bg-violet-600 text-white py-2 rounded-lg font-semibold hover:bg-violet-500 transition">Login</button>
+      </form>
+      <form id="signup-form" class="space-y-3 hidden">
+        <input name="name" placeholder="Full name" required class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-violet-500" />
+        <input name="email" type="email" placeholder="you@example.com" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9](?:[a-zA-Z0-9\-]*[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9\-]*[a-zA-Z0-9])?)*\.[a-zA-Z]{2,}" title="Enter a valid email like name@example.com" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-violet-500" />
+        <input name="password" type="password" placeholder="Password (min 6 chars)" required minlength="6" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-violet-500" />
+        <button class="w-full bg-violet-600 text-white py-2 rounded-lg font-semibold hover:bg-violet-500 transition">Create account</button>
+      </form>
+      <p id="auth-error" class="mt-3 text-sm text-red-400 text-center"></p>
+    </div>
+  </div>
+
+  <!-- APP SCREEN -->
+  <div id="app-screen" class="hidden">
+    <header class="bg-slate-900 border-b border-slate-800 sticky top-0 z-10">
+      <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <span class="text-xl font-bold bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">📋 TaskHub</span>
+        </div>
+        <nav class="flex items-center gap-4">
+          <button data-view="dashboard" class="nav-btn font-medium text-slate-300 hover:text-violet-400 transition">Dashboard</button>
+          <button data-view="projects" class="nav-btn font-medium text-slate-300 hover:text-violet-400 transition">Projects</button>
+          <span id="user-name" class="text-sm text-slate-400 hidden md:inline"></span>
+          <button id="logout-btn" class="text-sm text-red-400 hover:text-red-300 hover:underline">Logout</button>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content" class="max-w-6xl mx-auto p-4 md:p-6"></main>
+  </div>
+
+  <!-- MODAL ROOT -->
+  <div id="modal-root"></div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
